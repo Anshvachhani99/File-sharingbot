@@ -13,7 +13,7 @@ from database.sql import add_user, query_msg, full_userbase
 
 #=====================================================================================##
 
-WAIT_MSG = """<b>Uploading....☺</b>"""
+WAIT_MSG = """<b>Uploading....🥶</b>"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
 
@@ -147,7 +147,7 @@ async def not_joined(client: Client, message: Message):
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
-    await msg.edit(f"{len(users)} users are using this bot")
+    await msg.edit(f"**✪ Total Users -{len(users)}**")
 
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
